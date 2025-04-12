@@ -21,13 +21,26 @@ button {
   box-shadow: 1px 1px 1px black;
 }
 
-.screen {
+#memory {
   border: 1px solid black;
   width: 100%;
-  height: 120px;
+  height: 60px;
   border-radius: 10px;
   background-color: white;
   box-shadow: 2px 1px 1px black;
+}
+
+#mainInput {
+  border: 1px solid black;
+  width: 100%;
+  height: 60px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 2px 1px 1px black;
+}
+
+#mainVal {
+  color: black;
 }
 
 .bottomRow,
