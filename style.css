@@ -18,6 +18,7 @@ button {
   font-size: 30px;
   border-radius: 50px;
   margin-top: 5px;
+  box-shadow: 1px 1px 1px black;
 }
 
 .screen {
@@ -32,4 +33,9 @@ button {
 #enter {
   width: 98%;
   border-radius: 20px;
+}
+
+button:active {
+  box-shadow: 2px 2px 2px blue;
+  transform: translateY(1px);
 }
