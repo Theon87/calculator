@@ -33,70 +33,82 @@ mainVal.innerHTML = mainDisplay;
 
 clear.addEventListener("click", function () {
   mainDisplay = [0];
+  display();
   console.log(mainDisplay);
 });
 
 backspace.addEventListener("click", function () {
   mainDisplay.pop();
+  if (mainDisplay.length === 0) mainDisplay = [0];
   display();
   console.log(mainDisplay);
 });
 
 one.addEventListener("click", function () {
+  replaceLeadingZero();
   mainDisplay.push(1);
   display();
   console.log(mainDisplay);
 });
 
 two.addEventListener("click", function () {
+  replaceLeadingZero();
   mainDisplay.push(2);
   display();
   console.log(mainDisplay);
 });
 
 three.addEventListener("click", function () {
+  replaceLeadingZero();
   mainDisplay.push(3);
   display();
   console.log(mainDisplay);
 });
 
 four.addEventListener("click", function () {
+  replaceLeadingZero();
   mainDisplay.push(4);
   display();
   console.log(mainDisplay);
 });
 
 five.addEventListener("click", function () {
+  replaceLeadingZero();
   mainDisplay.push(5);
   display();
   console.log(mainDisplay);
 });
 
 six.addEventListener("click", function () {
+  replaceLeadingZero();
   mainDisplay.push(6);
   display();
   console.log(mainDisplay);
 });
 
 seven.addEventListener("click", function () {
+  replaceLeadingZero();
   mainDisplay.push(7);
   display();
   console.log(mainDisplay);
 });
 
 eight.addEventListener("click", function () {
+  replaceLeadingZero();
   mainDisplay.push(8);
   display();
   console.log(mainDisplay);
 });
 
 nine.addEventListener("click", function () {
+  replaceLeadingZero();
   mainDisplay.push(9);
   display();
   console.log(mainDisplay);
 });
 
 zero.addEventListener("click", function () {
+  replaceLeadingZero();
   mainDisplay.push(0);
   display();
   console.log(mainDisplay);
@@ -118,10 +130,14 @@ positiveNegative.addEventListener("click", function () {
 
 function display() {
   if (mainDisplay.length > 0) {
-    for (i = 0; i < mainDisplay.length; i++) {
-      mainVal.innerHTML = mainDisplay[i];
-    }
+    mainVal.innerHTML = mainDisplay.join("");
   } else {
     mainVal.innerHTML = 0;
+  }
+}
+
+function replaceLeadingZero() {
+  if (mainDisplay[0] === 0 && mainDisplay.length === 1) {
+    mainDisplay.pop(0);
   }
 }
