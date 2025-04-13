@@ -29,8 +29,10 @@ console.log(mainDisplay);
 
 mainVal.innerHTML = mainDisplay;
 
+// Event Listeners
+
 clear.addEventListener("click", function () {
-  mainDisplay = [];
+  mainDisplay = [0];
   console.log(mainDisplay);
 });
 
@@ -111,6 +113,8 @@ positiveNegative.addEventListener("click", function () {
   display();
   console.log(mainDisplay);
 });
+
+// Functions
 
 function display() {
   if (mainDisplay.length > 0) {
