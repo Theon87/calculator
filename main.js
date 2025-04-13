@@ -24,6 +24,9 @@ const positiveNegative = document.getElementById("positiveNegative");
 const percent = document.getElementById("percent");
 const enter = document.getElementById("enter");
 
+let firstOperand = null;
+let operator = null;
+
 let mainDisplay = [0];
 console.log(mainDisplay);
 
@@ -141,3 +144,30 @@ function replaceLeadingZero() {
     mainDisplay.pop(0);
   }
 }
+
+add.addEventListener("click", function () {
+  firstOperand = parseFloat(mainDisplay.join(""));
+  operator = "+";
+  mainDisplay = [];
+  display();
+  console.log("firstOperand: ", firstOperand);
+});
+
+enter.addEventListener("click", function () {
+  const secondOperand = parseFloat(mainDisplay.join(""));
+  let result;
+
+  switch (operator) {
+    case "+":
+      result = firstOperand + secondOperand;
+      break;
+    default:
+      result = secondOperand;
+  }
+
+  mainDisplay = result.toString().split("");
+  firstOperand = null;
+  operator = null;
+  display();
+  console.log("Result: ", result);
+});
