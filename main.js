@@ -129,6 +129,66 @@ positiveNegative.addEventListener("click", function () {
   console.log(mainDisplay);
 });
 
+add.addEventListener("click", function () {
+  firstOperand = parseFloat(mainDisplay.join(""));
+  operator = "+";
+  mainDisplay = [];
+  display();
+  console.log("firstOperand: ", firstOperand);
+});
+
+subtract.addEventListener("click", function () {
+  firstOperand = parseFloat(mainDisplay.join(""));
+  operator = "-";
+  mainDisplay = [];
+  display();
+  console.log("firstOperand: ", firstOperand);
+});
+
+multiply.addEventListener("click", function () {
+  firstOperand = parseFloat(mainDisplay.join(""));
+  operator = "*";
+  mainDisplay = [];
+  display();
+  console.log("firstOperand: ", firstOperand);
+});
+
+divide.addEventListener("click", function () {
+  firstOperand = parseFloat(mainDisplay.join(""));
+  operator = "/";
+  mainDisplay = [];
+  display();
+  console.log("firstOperand: ", firstOperand);
+});
+
+enter.addEventListener("click", function () {
+  const secondOperand = parseFloat(mainDisplay.join(""));
+  let result;
+
+  switch (operator) {
+    case "+":
+      result = firstOperand + secondOperand;
+      break;
+    case "-":
+      result = firstOperand - secondOperand;
+      break;
+    case "*":
+      result = firstOperand * secondOperand;
+      break;
+    case "/":
+      result = firstOperand / secondOperand;
+      break;
+    default:
+      result = secondOperand;
+  }
+
+  mainDisplay = result.toString().split("");
+  firstOperand = null;
+  operator = null;
+  display();
+  console.log("Result: ", result);
+});
+
 // Functions
 
 function display() {
@@ -144,30 +204,3 @@ function replaceLeadingZero() {
     mainDisplay.pop(0);
   }
 }
-
-add.addEventListener("click", function () {
-  firstOperand = parseFloat(mainDisplay.join(""));
-  operator = "+";
-  mainDisplay = [];
-  display();
-  console.log("firstOperand: ", firstOperand);
-});
-
-enter.addEventListener("click", function () {
-  const secondOperand = parseFloat(mainDisplay.join(""));
-  let result;
-
-  switch (operator) {
-    case "+":
-      result = firstOperand + secondOperand;
-      break;
-    default:
-      result = secondOperand;
-  }
-
-  mainDisplay = result.toString().split("");
-  firstOperand = null;
-  operator = null;
-  display();
-  console.log("Result: ", result);
-});
