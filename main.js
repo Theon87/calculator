@@ -246,3 +246,97 @@ function replaceLeadingZero() {
     mainDisplay.pop(0);
   }
 }
+
+function keyboardFunc() {
+  document.addEventListener("keydown", function (event) {
+    const keyPressed = event.key;
+
+    if (!isNaN(keyPressed)) {
+      replaceLeadingZero();
+      mainDisplay.push(parseInt(keyPressed));
+      display();
+      console.log(mainDisplay);
+    } else if (keyPressed === "+") {
+      firstOperand = parseFloat(mainDisplay.join(""));
+      operator = "+";
+      mainDisplay = [];
+      showMemory();
+      display();
+      console.log("firstOperand: ", firstOperand);
+    } else if (keyPressed === "-") {
+      firstOperand = parseFloat(mainDisplay.join(""));
+      operator = "-";
+      mainDisplay = [];
+      showMemory();
+      display();
+      console.log("firstOperand: ", firstOperand);
+    } else if (keyPressed === "*") {
+      firstOperand = parseFloat(mainDisplay.join(""));
+      operator = "*";
+      mainDisplay = [];
+      showMemory();
+      display();
+      console.log("firstOperand: ", firstOperand);
+    } else if (keyPressed === "/") {
+      firstOperand = parseFloat(mainDisplay.join(""));
+      operator = "/";
+      mainDisplay = [];
+      showMemory();
+      display();
+      console.log("firstOperand: ", firstOperand);
+    } else if (keyPressed === "Enter" || keyPressed === "=") {
+      const secondOperand = parseFloat(mainDisplay.join(""));
+      console.log("secondOperand: ", secondOperand);
+      let result;
+
+      switch (operator) {
+        case "+":
+          result = firstOperand + secondOperand;
+          break;
+        case "-":
+          result = firstOperand - secondOperand;
+          break;
+        case "*":
+          result = firstOperand * secondOperand;
+          break;
+        case "/":
+          result = firstOperand / secondOperand;
+          break;
+        default:
+          result = secondOperand;
+      }
+
+      console.log("operator: ", operator);
+      mainDisplay = result.toString().split("");
+      memoryVal.innerHTML = firstOperand + operator + secondOperand;
+      firstOperand = null;
+      operator = null;
+      display();
+      console.log("Result: ", result);
+    } else if (keyPressed === "Backspace") {
+      mainDisplay.pop();
+      if (mainDisplay.length === 0) mainDisplay = [0];
+      display();
+      console.log(mainDisplay);
+    } else if (keyPressed === ".") {
+      mainDisplay.push(".");
+      display();
+      console.log(mainDisplay);
+    } else if (keyPressed === "Escape") {
+      mainDisplay = [0];
+      memoryDisplay = [];
+      display();
+      memoryVal.innerHTML = memoryDisplay;
+      console.log(mainDisplay);
+      console.log(memoryDisplay);
+    } else if (keyPressed === "%") {
+      firstOperand = parseFloat(mainDisplay.join(""));
+      result = firstOperand / 100;
+      mainDisplay = result.toString().split("");
+      showMemory();
+      display();
+    }
+  });
+}
+
+keyboardFunc();
