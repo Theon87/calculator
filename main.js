@@ -1,6 +1,8 @@
+// Variables -----------------------------------------------------------------------------------------------------------
+
 const screenMemory = document.getElementById("memory");
 const screenMainInput = document.getElementById("mainInput");
-const memoryValue = document.getElementById("memoryVal");
+const memoryVal = document.getElementById("memoryVal");
 const mainVal = document.getElementById("mainVal");
 const clear = document.getElementById("clear");
 const clearLastEntry = document.getElementById("clearLastEntry");
@@ -24,20 +26,26 @@ const positiveNegative = document.getElementById("positiveNegative");
 const percent = document.getElementById("percent");
 const enter = document.getElementById("enter");
 
+let mainDisplay = [0];
+console.log(mainDisplay);
+mainVal.innerHTML = mainDisplay;
+
+let memoryDisplay = [];
+console.log(memoryDisplay);
+memoryVal.innerHTML = memoryDisplay;
+
 let firstOperand = null;
 let operator = null;
 
-let mainDisplay = [0];
-console.log(mainDisplay);
-
-mainVal.innerHTML = mainDisplay;
-
-// Event Listeners
+// Event Listeners -----------------------------------------------------------------------------------------------------
 
 clear.addEventListener("click", function () {
   mainDisplay = [0];
+  memoryDisplay = [];
   display();
+  memoryVal.innerHTML = memoryDisplay;
   console.log(mainDisplay);
+  console.log(memoryDisplay);
 });
 
 backspace.addEventListener("click", function () {
@@ -133,6 +141,7 @@ add.addEventListener("click", function () {
   firstOperand = parseFloat(mainDisplay.join(""));
   operator = "+";
   mainDisplay = [];
+  showMemory();
   display();
   console.log("firstOperand: ", firstOperand);
 });
@@ -163,6 +172,7 @@ divide.addEventListener("click", function () {
 
 enter.addEventListener("click", function () {
   const secondOperand = parseFloat(mainDisplay.join(""));
+  console.log("secondOperand: ", secondOperand);
   let result;
 
   switch (operator) {
@@ -182,20 +192,34 @@ enter.addEventListener("click", function () {
       result = secondOperand;
   }
 
+  console.log("operator: ", operator);
   mainDisplay = result.toString().split("");
+  memoryVal.innerHTML = firstOperand + operator + secondOperand;
   firstOperand = null;
   operator = null;
   display();
   console.log("Result: ", result);
 });
 
-// Functions
+// Functions ---------------------------------------------------------------------------------------------------------
 
 function display() {
   if (mainDisplay.length > 0) {
     mainVal.innerHTML = mainDisplay.join("");
   } else {
     mainVal.innerHTML = 0;
+  }
+}
+
+function showMemory() {
+  if (firstOperand > 0) {
+    memoryVal.innerHTML = firstOperand;
+  } else {
+    memoryVal.innerHTML = null;
+  }
+
+  if (operator !== null) {
+    memoryVal.innerHTML = firstOperand + operator;
   }
 }
 
