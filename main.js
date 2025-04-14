@@ -48,6 +48,12 @@ clear.addEventListener("click", function () {
   console.log(memoryDisplay);
 });
 
+clearLastEntry.addEventListener("click", function () {
+  mainDisplay = [0];
+  display();
+  console.log(mainDisplay);
+});
+
 backspace.addEventListener("click", function () {
   mainDisplay.pop();
   if (mainDisplay.length === 0) mainDisplay = [0];
