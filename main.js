@@ -173,6 +173,14 @@ divide.addEventListener("click", function () {
   console.log("firstOperand: ", firstOperand);
 });
 
+percent.addEventListener("click", function () {
+  firstOperand = parseFloat(mainDisplay.join(""));
+  result = firstOperand / 100;
+  mainDisplay = result.toString().split("");
+  showMemory();
+  display();
+});
+
 enter.addEventListener("click", function () {
   const secondOperand = parseFloat(mainDisplay.join(""));
   console.log("secondOperand: ", secondOperand);
