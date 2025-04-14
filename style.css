@@ -4,6 +4,12 @@
   margin: auto;
 }
 
+html,
+body {
+  background-color: blue;
+  padding: auto;
+}
+
 main {
   max-width: 400px;
   max-height: 100vh;
