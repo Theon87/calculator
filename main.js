@@ -150,6 +150,7 @@ subtract.addEventListener("click", function () {
   firstOperand = parseFloat(mainDisplay.join(""));
   operator = "-";
   mainDisplay = [];
+  showMemory();
   display();
   console.log("firstOperand: ", firstOperand);
 });
@@ -158,6 +159,7 @@ multiply.addEventListener("click", function () {
   firstOperand = parseFloat(mainDisplay.join(""));
   operator = "*";
   mainDisplay = [];
+  showMemory();
   display();
   console.log("firstOperand: ", firstOperand);
 });
@@ -166,6 +168,7 @@ divide.addEventListener("click", function () {
   firstOperand = parseFloat(mainDisplay.join(""));
   operator = "/";
   mainDisplay = [];
+  showMemory();
   display();
   console.log("firstOperand: ", firstOperand);
 });
