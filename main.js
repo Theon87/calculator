@@ -132,9 +132,10 @@ decimalPoint.addEventListener("click", function () {
 });
 
 positiveNegative.addEventListener("click", function () {
-  mainDisplay.push("-");
-  display();
-  console.log(mainDisplay);
+  let displayNum = parseFloat(mainDisplay.join("")) * -1;
+  mainVal.innerHTML = displayNum;
+  mainDisplay = [];
+  mainDisplay.push(displayNum);
 });
 
 add.addEventListener("click", function () {
