@@ -6,7 +6,7 @@
 
 html,
 body {
-  background-color: blue;
+  background-color: rgb(80, 80, 135);
   padding: auto;
 }
 
@@ -14,7 +14,7 @@ main {
   max-width: 400px;
   max-height: 100vh;
   margin-top: 5px;
-  border: 2px solid gray;
+  border: 3px solid gray;
   border-style: outset;
   border-radius: 10px;
   padding: 7px;
@@ -76,4 +76,16 @@ button {
 button:active {
   box-shadow: 2px 2px 2px blue;
   transform: translateY(1px);
+}
+
+@media screen and (min-width: 700px) {
+  body {
+    padding: 35px;
+  }
+}
+
+@media screen and (min-height: 700px) {
+  body {
+    padding-top: 35px;
+  }
 }
