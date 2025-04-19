@@ -145,39 +145,55 @@ positiveNegative.addEventListener("click", function () {
 });
 
 add.addEventListener("click", function () {
-  firstOperand = parseFloat(mainDisplay.join(""));
-  operator = "+";
-  mainDisplay = [];
-  showMemory();
-  display();
-  console.log("firstOperand: ", firstOperand);
+  if (mainDisplay.length > 0) {
+    firstOperand = parseFloat(mainDisplay.join(""));
+    operator = "+";
+    mainDisplay = [];
+    showMemory();
+    display();
+    console.log("firstOperand: ", firstOperand);
+  } else {
+    return mainDisplay;
+  }
 });
 
 subtract.addEventListener("click", function () {
-  firstOperand = parseFloat(mainDisplay.join(""));
-  operator = "-";
-  mainDisplay = [];
-  showMemory();
-  display();
-  console.log("firstOperand: ", firstOperand);
+  if (mainDisplay.length > 0) {
+    firstOperand = parseFloat(mainDisplay.join(""));
+    operator = "-";
+    mainDisplay = [];
+    showMemory();
+    display();
+    console.log("firstOperand: ", firstOperand);
+  } else {
+    return mainDisplay;
+  }
 });
 
 multiply.addEventListener("click", function () {
-  firstOperand = parseFloat(mainDisplay.join(""));
-  operator = "*";
-  mainDisplay = [];
-  showMemory();
-  display();
-  console.log("firstOperand: ", firstOperand);
+  if (mainDisplay.length > 0) {
+    firstOperand = parseFloat(mainDisplay.join(""));
+    operator = "*";
+    mainDisplay = [];
+    showMemory();
+    display();
+    console.log("firstOperand: ", firstOperand);
+  } else {
+    return mainDisplay;
+  }
 });
 
 divide.addEventListener("click", function () {
-  firstOperand = parseFloat(mainDisplay.join(""));
-  operator = "/";
-  mainDisplay = [];
-  showMemory();
-  display();
-  console.log("firstOperand: ", firstOperand);
+  if (mainDisplay.length > 0) {
+    firstOperand = parseFloat(mainDisplay.join(""));
+    operator = "/";
+    mainDisplay = [];
+    showMemory();
+    display();
+    console.log("firstOperand: ", firstOperand);
+  } else {
+    return mainDisplay;
+  }
 });
 
 percent.addEventListener("click", function () {
@@ -257,33 +273,49 @@ function keyboardFunc() {
       display();
       console.log(mainDisplay);
     } else if (keyPressed === "+") {
-      firstOperand = parseFloat(mainDisplay.join(""));
-      operator = "+";
-      mainDisplay = [];
-      showMemory();
-      display();
-      console.log("firstOperand: ", firstOperand);
+      if (mainDisplay.length > 0) {
+        firstOperand = parseFloat(mainDisplay.join(""));
+        operator = "+";
+        mainDisplay = [];
+        showMemory();
+        display();
+        console.log("firstOperand: ", firstOperand);
+      } else {
+        return mainDisplay;
+      }
     } else if (keyPressed === "-") {
-      firstOperand = parseFloat(mainDisplay.join(""));
-      operator = "-";
-      mainDisplay = [];
-      showMemory();
-      display();
-      console.log("firstOperand: ", firstOperand);
+      if (mainDisplay.length > 0) {
+        firstOperand = parseFloat(mainDisplay.join(""));
+        operator = "-";
+        mainDisplay = [];
+        showMemory();
+        display();
+        console.log("firstOperand: ", firstOperand);
+      } else {
+        return mainDisplay;
+      }
     } else if (keyPressed === "*") {
-      firstOperand = parseFloat(mainDisplay.join(""));
-      operator = "*";
-      mainDisplay = [];
-      showMemory();
-      display();
-      console.log("firstOperand: ", firstOperand);
+      if (mainDisplay.length > 0) {
+        firstOperand = parseFloat(mainDisplay.join(""));
+        operator = "*";
+        mainDisplay = [];
+        showMemory();
+        display();
+        console.log("firstOperand: ", firstOperand);
+      } else {
+        return mainDisplay;
+      }
     } else if (keyPressed === "/") {
-      firstOperand = parseFloat(mainDisplay.join(""));
-      operator = "/";
-      mainDisplay = [];
-      showMemory();
-      display();
-      console.log("firstOperand: ", firstOperand);
+      if (mainDisplay.length > 0) {
+        firstOperand = parseFloat(mainDisplay.join(""));
+        operator = "/";
+        mainDisplay = [];
+        showMemory();
+        display();
+        console.log("firstOperand: ", firstOperand);
+      } else {
+        return mainDisplay;
+      }
     } else if (keyPressed === "Enter" || keyPressed === "=") {
       const secondOperand = parseFloat(mainDisplay.join(""));
       console.log("secondOperand: ", secondOperand);
